@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Image Gallery</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f8f8f8;
+    }
+    header {
+      text-align: center;
+      padding: 1rem;
+      background-color: #333;
+      color: white;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      padding: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    /* Lightbox styles */
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+    }
+    .lightbox:target {
+      display: flex;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>My Image Gallery</h1>
+  </header>
+
+  <main class="gallery">
+    <a href="#img1"><img src="download.jpeg" alt="Gallery image 1"></a>
+    <a href="#img2"><img src="https://picsum.photos/id/1016/400/300" alt="Gallery image 2"></a>
+    <a href="#img3"><img src="https://picsum.photos/id/1020/400/300" alt="Gallery image 3"></a>
+    <a href="#img4"><img src="https://picsum.photos/id/1024/400/300" alt="Gallery image 4"></a>
+    <a href="#img5"><img src="https://picsum.photos/id/1025/400/300" alt="Gallery image 5"></a>
+  </main>
+
+  <!-- Lightbox overlays -->
+  <div id="img1" class="lightbox">
+    <a href="#"><img src="https://picsum.photos/id/1015/1200/800" alt="Full image 1"></a>
+  </div>
+  <div id="img2" class="lightbox">
+    <a href="#"><img src="https://picsum.photos/id/1016/1200/800" alt="Full image 2"></a>
+  </div>
+  <div id="img3" class="lightbox">
+    <a href="#"><img src="https://picsum.photos/id/1020/1200/800" alt="Full image 3"></a>
+  </div>
+  <div id="img4" class="lightbox">
+    <a href="#"><img src="https://picsum.photos/id/1024/1200/800" alt="Full image 4"></a>
+  </div>
+  <div id="img5" class="lightbox">
+    <a href="#"><img src="https://picsum.photos/id/1025/1200/800" alt="Full image 5"></a>
+  </div>
+
+</body>
+</html>
